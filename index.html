@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galaxy Space Chatbot</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0f26;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #66d9ff;
+        }
+
+        p {
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Galaxy Space Chatbot</h1>
+    <p>Your AI assistant is loading...</p>
+
+    
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "d127d304-7ca3-41f0-909c-63c2a6ef7123", // The ID of this integration.
+        region: "eu-de", // The region your integration is hosted in.
+        serviceInstanceID: "ddab8295-f7fa-4126-a195-1c69b5d5cc49", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+      };
+
+      setTimeout(function(){
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+                (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+                "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>
